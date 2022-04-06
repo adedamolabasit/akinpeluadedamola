@@ -38,4 +38,5 @@ admin.add_view(Controllers(About,db.session,name='About me'))
 @app.route('/')
 def index():
     query=Profile.query.filter_by(id=1).first()
-    return render_template('index.html',query=query)
+    about=About.query.filter_by(id=1).first()
+    return render_template('index.html',query=query,about=about)
