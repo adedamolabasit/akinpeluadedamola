@@ -29,6 +29,7 @@ class Controllers(ModelView):
 
 admin.add_view(Controllers(Profile,db.session,name='Profile'))
 admin.add_view(Controllers(About,db.session,name='About me'))
+admin.add_view(Controllers(Skills,db.session,name='skills'))
 
 
 

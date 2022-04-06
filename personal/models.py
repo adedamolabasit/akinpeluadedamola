@@ -29,7 +29,19 @@ class About(db.Model):
     email=db.Column(db.Text,nullable=True)
     degree=db.Column(db.Text,nullable=True)
     information=db.Column(db.Text,nullable=True)
+    skills=db.relationship('Skills',cascade='all,delete',backref='about')
 
     def __repr__(self):
         return self.job_title
+
+class Skills(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    skill=db.Column(db.String(45),nullable=True)
+    value=db.Column(db.Integer,nullable=True)
+    about_id=db.Column(db.Integer,db.ForeignKey('about.id'),nullable=True)
+
+    def __repr__(self):
+        return self.skill
+
+
 
