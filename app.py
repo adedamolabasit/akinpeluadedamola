@@ -28,6 +28,7 @@ class Controllers(ModelView):
     #     return " you are not authorized to use the Nautilus dashboard "
 
 admin.add_view(Controllers(Profile,db.session,name='Profile'))
+admin.add_view(Controllers(About,db.session,name='About me'))
 
 
 

@@ -17,4 +17,19 @@ class Profile(db.Model):
 
     def __repr__(self):
         return self.name
+class About(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    job_title=db.Column(db.String(25),nullable=True)
+    birthday=db.Column(db.String(25),nullable=True)
+    phone=db.Column(db.String(25),nullable=True)
+    sex=db.Column(db.String(25),nullable=True)
+    describe=db.Column(db.Text,nullable=True)
+    city=db.Column(db.Text,nullable=True)
+    website_url=db.Column(db.Text,nullable=True)
+    email=db.Column(db.Text,nullable=True)
+    degree=db.Column(db.Text,nullable=True)
+    information=db.Column(db.Text,nullable=True)
+
+    def __repr__(self):
+        return self.job_title
 
