@@ -25,12 +25,13 @@ class About(db.Model):
     birthday=db.Column(db.String(25),nullable=True)
     phone=db.Column(db.String(25),nullable=True)
     sex=db.Column(db.String(25),nullable=True)
-    describe=db.Column(db.Text,nullable=True)
+    brief_bio=db.Column(db.Text,nullable=True)
     city=db.Column(db.Text,nullable=True)
     website_url=db.Column(db.Text,nullable=True)
     email=db.Column(db.Text,nullable=True)
     degree=db.Column(db.Text,nullable=True)
-    information=db.Column(db.Text,nullable=True)
+    professional_bio=db.Column(db.Text,nullable=True)
+    personal_bio=db.Column(db.Text,nullable=True,default='personal bio')
     skills=db.relationship('Skills',cascade='all,delete',backref='about')
 
     def __repr__(self):
@@ -74,6 +75,14 @@ class Project(db.Model):
     github_url=db.Column(db.Text,nullable=True)
     project_url=db.Column(db.Text,nullable=True)
     project_date=db.Column(db.DateTime,default=datetime.datetime.now)
+    def __repr__(self):
+        return self.title
+class Service(db.Model):
+    id=db.Column(db.Integer,primary_key=True)
+    title=db.Column(db.String(32),nullable=True)
+    note=db.Column(db.String(152),nullable=True)
+    description=db.Column(db.Text,nullable=True)
+    image_link=db.Column(db.Text,nullable=True)
     def __repr__(self):
         return self.title
 class Contact(db.Model):

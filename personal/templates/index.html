@@ -44,8 +44,9 @@
       <h1><a href="index.html">{{ query.name }}</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <h2">{{ query.describe }}</h2>
-
+      <div class="col-lg-6 " style="color: beige;">
+      <h2 class="justify-content-center">{{ query.describe }}</h2>
+      </div>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link active" href="#header">Home</a></li>
@@ -86,8 +87,12 @@
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
           <h3>{{ about.job_title }}</h3>
           <p class="fst-italic">
-            {{ about.describe }}
+            {{ about.brief_bio }}
           </p>
+          <br>
+          <p>
+            {{ about.professional_bio }}
+           </p>
           <div class="row">
             <div class="col-lg-6">
               <ul>
@@ -107,7 +112,7 @@
             </div>
           </div>
           <p>
-           {{ about.information }}
+           {{ about.personal_bio }}
           </p>
         </div>
       </div>
@@ -165,7 +170,7 @@
       <div class="row skills-content">
 
         <div class="col-lg-6">
-          <h4>Frontend</h4>
+          <h4>Tools</h4>
         
           {% for skill in about.skills %}
           {% if skill.backend == False %}
@@ -202,89 +207,80 @@
     <div class="interests container">
 
       <div class="section-title">
-        <h2>Interests</h2>
+        <h2>Tools</h2>
       </div>
 
       <div class="row">
         <div class="col-lg-3 col-md-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="vscode-icons:file-type-python" data-width="51" data-height="51"></span>
-            <h3>Python</h3>
+            <span class="iconify justify-content-center" data-icon="vscode-icons:file-type-python" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Python</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:django" data-width="51" data-height="51"></span>
-            <h3>Django</h3>
+            <span class="iconify" data-icon="vscode-icons:file-type-django" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Django</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-md-0">
           <div class="icon-box">
-            <span class="iconify" style="color:green;" data-icon="logos:flask" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-calendar-todo-line" style="color: #e80368;"></i> -->
-            <h3>Flask</h3>
+            <span class="iconify" data-icon="simple-icons:flask" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Flask</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4 mt-lg-0">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:docker-icon" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-paint-brush-line" style="color: #e361ff;"></i> -->
-            <h3>Docker</h3>
+            <span class="iconify" data-icon="logos:docker-icon" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Docker</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:javascript" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-database-2-line" style="color: #47aeff;"></i> -->
-            <h3>Javascript</h3>
+            <span class="iconify" data-icon="logos:javascript" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Javascript</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" style="color:lightskyblue;" data-icon="eos-icons:database" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-gradienter-line" style="color: #ffa76e;"></i> -->
-            <h3>Database</h3>
+            <span class="iconify" style="color:lightskyblue;" data-icon="eos-icons:database" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Database</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <i class="ri-file-list-3-line" style="color: #11dbcf;"></i>
-            <h3>Express.js</h3>
+            <span class="iconify" data-icon="logos:nodejs" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Node</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:aws" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-price-tag-2-line" style="color: #4233ff;"></i> -->
-            <h3>AWS</h3>
+            <span class="iconify" data-icon="logos:aws" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">AWS</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:heroku-icon" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-anchor-line" style="color: #b2904f;"></i> -->
-            <h3>Heroku</h3>
+            <span class="iconify" data-icon="logos:heroku-icon" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">Heroku</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="vscode-icons:file-type-reactjs" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-disc-line" style="color: #b20969;"></i> -->
-            <h3>React</h3>
+            <span class="iconify" data-icon="vscode-icons:file-type-reactjs" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">React</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:html-5" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-base-station-line" style="color: #ff5828;"></i> -->
-            <h3>HTML</h3>
+            <span class="iconify" data-icon="logos:html-5" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">HTML</h3>
           </div>
         </div>
         <div class="col-lg-3 col-md-4 mt-4">
           <div class="icon-box">
-            <span class="iconify" data-icon="logos:css-3" data-width="51" data-height="51"></span>
-            <!-- <i class="ri-fingerprint-line" style="color: #29cc61;"></i> -->
-            <h3>CSS</h3>
+            <span class="iconify" data-icon="logos:css-3" data-width="45" data-height="45"></span>
+            <h3 class="mx-4">CSS</h3>
           </div>
         </div>
       </div>
@@ -295,76 +291,26 @@
     <div class="testimonials container">
 
       <div class="section-title">
-        <h2>Testimonials</h2>
+        <h2>Services</h2>
       </div>
 
       <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper-wrapper">
-
+          {% for service in services %}
           <div class="swiper-slide">
             <div class="testimonial-item">
               <p>
                 <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
+                {{ service.description }}
                 <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="static/assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-              <h3>Saul Goodman</h3>
-              <h4>Ceo &amp; Founder</h4>
-            </div>
-          </div><!-- End testimonial item -->
+              <!-- <h3 class="text-success">{{ service.title }}</h3> -->
 
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
               </p>
-              <img src="static/assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
+              <!-- <img src="{{ service.image_link }}" class="testimonial-img" alt=""> -->
+              <!-- <h4>Ceo &amp; Founder</h4> -->
             </div>
           </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="static/assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="static/assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-            </div>
-          </div><!-- End testimonial item -->
-
-          <div class="swiper-slide">
-            <div class="testimonial-item">
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-              <img src="static/assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-            </div>
-          </div><!-- End testimonial item -->
+          {% endfor %}
 
         </div>
         <div class="swiper-pagination"></div>

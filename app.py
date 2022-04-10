@@ -33,6 +33,7 @@ admin.add_view(Controllers(About,db.session,name='About me'))
 admin.add_view(Controllers(Skills,db.session,name='skills'))
 admin.add_view(Controllers(Resume,db.session,name='Resume'))
 admin.add_view(Controllers(Project,db.session,name='My Projects'))
+admin.add_view(Controllers(Service,db.session,name='My Services'))
 
 
 
@@ -45,9 +46,10 @@ def index():
     about=About.query.filter_by(id=1).first()
     resume=Resume.query.all()
     project=Project.query.all()
+    service=Service.query.all()
     return render_template('index.html',
     query=query,about=about,resumes=resume
-    ,projects=project
+    ,projects=project,services=service
     )
 @app.route('/details/projects/<int:id>/')
 def project_details(id):
