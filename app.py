@@ -1,3 +1,4 @@
+from sqlalchemy import desc
 from personal import app,db
 from flask import redirect, render_template,request,url_for
 from personal.models import *
@@ -44,7 +45,7 @@ mail=Mail(app)
 def index():
     query=Profile.query.filter_by(id=1).first()
     about=About.query.filter_by(id=1).first()
-    resume=Resume.query.all()
+    resume=Resume.query.order_by(desc(Resume.start_date)).all()
     project=Project.query.all()
     service=Service.query.all()
     return render_template('index.html',
@@ -68,23 +69,23 @@ def contact():
         db.session.commit()
 
 
-        msg = Message('Contact message',
-        sender='Akinpelu Adedamola',
-        recipients=['adedamolabasit09@gmail.com'])
-        msg.body=f'''
-        Name:{name}
-        email:{email}
-        text:{email}
-        message={message}         
-        '''
-        mail.send(msg)  
-        msg = Message('Submitted',
-        sender='Akinpelu Adedamola',
-        recipients=[email])
-        msg.body=f'''
-        Thanks for the message
-        '''
-        mail.send(msg)  
+        # msg = Message('Contact message',
+        # sender='Akinpelu Adedamola',
+        # recipients=['adedamolabasit09@gmail.com'])
+        # msg.body=f'''
+        # Name:{name}
+        # email:{email}
+        # text:{email}
+        # message={message}         
+        # '''
+        # mail.send(msg)  
+        # msg = Message('Submitted',
+        # sender='Akinpelu Adedamola',
+        # recipients=[email])
+        # msg.body=f'''
+        # Thanks for the message
+        # '''
+        # mail.send(msg)  
     else:
         return redirect(url_for('index'))
     return redirect(url_for('index'))

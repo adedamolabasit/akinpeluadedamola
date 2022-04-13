@@ -15,14 +15,12 @@ db=SQLAlchemy(app)
 migrate=Migrate(app,db)
 
 bcrypt=Bcrypt(app)
-app.config['MAIL_SERVER']='smtp.googlemail.com'
-app.config['MAIL_PORT']=465
-app.config['MAIL_USE_TLS']=False
-app.config['MAIL_USE_SSL']=True
-# app.config['MAIL_USERNAME']=os.environ.get('SMTP_USERNAME')
-# app.config['MAIL_PASSWORD']=os.environ.get('SMTP_PASSWORD')
-app.config['MAIL_USERNAME']="collablland@gmail.com"
-app.config['MAIL_PASSWORD']="Spinn221!"
+# app.config['MAIL_SERVER']='smtp.googlemail.com'
+# app.config['MAIL_PORT']=465
+# app.config['MAIL_USE_TLS']=False
+# app.config['MAIL_USE_SSL']=True
+# app.config['MAIL_USERNAME']="abakinpelu@student.oauife.edu.ng"
+# app.config['MAIL_PASSWORD']="ESM/2016/037"
 
 # login_manager = LoginManager(app)
 # login_manager.init_app(app)

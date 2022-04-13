@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Personal Bootstrap Template</title>
+  <title>Adedamola Akinpelu</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ url_for('static',filename='assets/img/favicon.png') }}" rel="icon">
-  <link href="{{ url_for('static',filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+  <!-- <link href="{{ url_for('static',filename='assets/img/favicon.png') }}" rel="icon"> -->
+  <!-- <link href="{{ url_for('static',filename='assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon"> -->
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -53,17 +53,17 @@
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#resume">Resume</a></li>
           <!-- <li><a class="nav-link" href="#project">Project</a></li> -->
-          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
           <li><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
       <div class="social-links">
+        <a href="{{ query.linkdin }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
         <a href="{{ query.twitter_link }}" class="twitter"><i class="bi bi-twitter"></i></a>
         <a href="{{ query.facebook_link }}" class="facebook"><i class="bi bi-facebook"></i></a>
         <a href="{{ query.instagram_link }}" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="{{ query.linkdin }}" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
 
     </div>
@@ -97,7 +97,7 @@
             <div class="col-lg-6">
               <ul>
                 <li><i class="bi bi-chevron-right"></i> <strong>Birthday:</strong> <span>{{ about.birthday }}</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Website:</strong> <span></span>{{ about.website_url }}</li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Github Link:</strong> <span></span><a href="{{ about.website_url }}">{{ about.website_url }}</a></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Phone:</strong> <span>{{ about.phone }}</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>City:</strong> <span>{{ about.city}}</span></li>
               </ul>
@@ -135,7 +135,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
           <div class="count-box">
             <i class="bi bi-journal-richtext"></i>
-            <span data-purecounter-start="0" data-purecounter-end="52" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="36" data-purecounter-duration="1" class="purecounter"></span>
             <p>Projects</p>
           </div>
         </div>
@@ -143,7 +143,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-headset"></i>
-            <span data-purecounter-start="0" data-purecounter-end="1463" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
             <p>Hours Of Support</p>
           </div>
         </div>
@@ -151,7 +151,7 @@
         <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
           <div class="count-box">
             <i class="bi bi-award"></i>
-            <span data-purecounter-start="0" data-purecounter-end="24" data-purecounter-duration="1" class="purecounter"></span>
+            <span data-purecounter-start="0" data-purecounter-end="2" data-purecounter-duration="1" class="purecounter"></span>
             <p>Awards</p>
           </div>
         </div>
@@ -337,13 +337,13 @@
         <div class="col-lg-6">
           <h3 class="resume-title">Sumary</h3>
           <div class="resume-item pb-0">
-            <h4>Alice Barkley</h4>
-            <p><em>Innovative and deadline-driven Graphic Designer with 3+ years of experience designing and developing user-centered digital/print marketing material from initial concept to final, polished deliverable.</em></p>
+            <h4>Nautilus Technologies</h4>
+            <p><em>I'm a software developer at Nautilus Technologies for little over a year.</em></p>
             <p>
             <ul>
-              <li>Portland par 127,Orlando, FL</li>
-              <li>(123) 456-7891</li>
-              <li>alice.barkley@example.com</li>
+              <li>shell@nautilus.tech</li>
+              <li>+2348168087807</li>
+              <li><a href="https//:nautilus.tech">nautilus.tech</a></li>
             </ul>
             </p>
           </div>
@@ -352,7 +352,7 @@
           {% for resume in resumes %}
           {% if resume.education == True %}
           <div class="resume-item">
-            <h4>{{ resume.role }}&amp;</h4>
+            <h4>{{ resume.role }}</h4>
             <h5>{{ resume.start_date.year }} - {{ resume.end_date.year }}</h5>
             <p><em>{{ resume.location }}</em></p>
             <p>{{ resume.describe1 }}</p>
@@ -389,8 +389,12 @@
           {% for resume in resumes %}
           {% if resume.work_experience == True %}
           <div class="resume-item">
-            <h4>{{ resume.role }}&amp;</h4>
+            <h4>{{ resume.role }}</h4>
+            {% if resume.start_date.year == resume.end_date.year %}
+            <h5>{{ resume.end_date.year }}</h5>
+            {% else %}
             <h5>{{ resume.start_date.year }} - {{ resume.end_date.year }}</h5>
+            {% endif %}
             <p><em>{{ resume.location }}</em></p>
             <p>{{ resume.describe1 }}</p>
             <p>
@@ -494,7 +498,7 @@
   <!-- End Services Section -->
 
   <!-- ======= Portfolio Section ======= -->
-  <section id="portfolio" class="portfolio">
+  <!-- <section id="portfolio" class="portfolio">
     <div class="container">
 
       <div class="section-title">
@@ -534,7 +538,7 @@
       </div>
 
     </div>
-  </section><!-- End Portfolio Section -->
+  </section>End Portfolio Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="contact">
@@ -600,13 +604,13 @@
         <div class="form-group mt-3">
           <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
         </div>
-        <div class="my-3">
+        <!-- <div class="my-3">
           <div class="loading">Loading</div>
           <div class="error-message"></div>
 
           <div class="sent-message">Your message has been sent. Thank you!</div>
-        </div>
-        <div class="text-center"><button type="submit">Send Message</button></div>
+        </div>-->
+        <div class="text-center text-light my-3"><button class="btn btn-secondary border-secondary" type="submit">Send Message</button></div>
       </form>
 
     </div>
